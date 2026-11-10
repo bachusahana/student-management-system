@@ -1,6 +1,6 @@
 *Complete replacement for `style.css`*
 
-```css
+
 /* General Reset */
 * {
     margin: 0;
@@ -239,4 +239,3 @@ td form button:hover {
         font-size: 19px;
     }
 }
-```

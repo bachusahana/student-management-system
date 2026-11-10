@@ -1,29 +1,19 @@
-
 from flask import Flask, render_template, request, redirect, url_for, flash
 import mysql.connector
 from dotenv import load_dotenv
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-import os
 
-env_path = Path(__file__).resolve().parent / ".env"
-
-load_dotenv(dotenv_path=env_path, override=True)
-
-print("ENV FILE:", env_path)
-print("ENV EXISTS:", env_path.exists())
-print("DB HOST LOADED:", bool(os.getenv("DB_HOST")))
-print("DB USER LOADED:", bool(os.getenv("DB_USER")))
-print("DB PASSWORD LOADED:", bool(os.getenv("DB_PASSWORD")))
-print("DB NAME LOADED:", bool(os.getenv("DB_NAME")))
-
-# Load the exact .env file inside backend
+# Load environment variables from backend/.env
 env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=env_path, override=True)
 
 app = Flask(__name__)
+
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
+
+if not app.secret_key:
+    raise RuntimeError("FLASK_SECRET_KEY is missing from .env")
 def get_db_connection():
     return mysql.connector.connect(
         host=os.getenv("DB_HOST"),
@@ -164,10 +154,5 @@ def delete_student(student_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    
-print("ENV FILE FOUND:", env_path.exists())
-print("DB HOST:", bool(os.getenv("DB_HOST")))
-print("DB USER:", bool(os.getenv("DB_USER")))
-print("DB PASSWORD:", bool(os.getenv("DB_PASSWORD")))
-print("DB NAME:", bool(os.getenv("DB_NAME")))
+    debug_mode = os.getenv("FLASK_DEBUG", "false").lower() == "true"
+    app.run(debug=debug_mode)
