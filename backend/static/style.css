@@ -1,0 +1,242 @@
+*Complete replacement for `style.css`*
+
+```css
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3f6fc;
+    color: #263248;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718096;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+/* Form and Table Cards */
+.form-box,
+.table-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 22px rgba(30, 58, 138, 0.07);
+    margin-bottom: 30px;
+    border: 1px solid #e8edf5;
+}
+
+h2 {
+    font-size: 21px;
+    color: #1e3a8a;
+    margin-bottom: 24px;
+}
+
+/* Registration Form */
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #344054;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #d6deeb;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+    color: #263248;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Buttons */
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-box button {
+    background: #2563eb;
+    color: white;
+    padding: 13px;
+    margin-top: 5px;
+}
+
+.form-box button:hover {
+    background: #1d4ed8;
+}
+
+/* Table */
+.table-box {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+thead {
+    background: #eff4ff;
+}
+
+th {
+    color: #1e3a8a;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+th,
+td {
+    padding: 16px 14px;
+    text-align: left;
+    border-bottom: 1px solid #edf0f5;
+    white-space: nowrap;
+}
+
+td {
+    font-size: 14px;
+    color: #475467;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fbff;
+}
+
+tbody tr:hover {
+    background: #f0f5ff;
+}
+
+/* Edit and Delete */
+td a {
+    display: inline-block;
+    background: #e8f1ff;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 8px 13px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+td a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+td form {
+    display: inline !important;
+}
+
+td form button {
+    background: #feecec;
+    color: #dc2626;
+    padding: 8px 13px;
+    font-size: 13px;
+}
+
+td form button:hover {
+    background: #dc2626;
+    color: white;
+}
+
+/* Success and Error Messages */
+.message {
+    padding: 13px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #e8f8ee;
+    color: #16803c;
+    border: 1px solid #b8e8c7;
+}
+
+.message.error {
+    background: #fff0f0;
+    color: #c62828;
+    border: 1px solid #ffcaca;
+}
+
+/* Edit Page Back Link */
+.form-box p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-box p a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .form-box,
+    .table-box {
+        padding: 20px 15px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+}
+```
